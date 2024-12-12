@@ -8,7 +8,7 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 # to get a string like this run:
 # openssl rand -hex 32
-SECRET_KEY = "89abc386a68212457798491089d869a86d8c20ce217fb3821fec9b1d851a27a0"
+SECRET_KEY = "89abc386a68212457798491089d869a86d8c20ce217fb3321fec9b1d851a27a0"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 

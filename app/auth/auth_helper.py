@@ -5,7 +5,6 @@ from fastapi.security import OAuth2PasswordBearer
 
 import jwt
 from jwt.exceptions import InvalidTokenError
-import logging
 
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
@@ -15,7 +14,7 @@ from app import schemas, crud, models
 from .jwt_helper import verify_password, SECRET_KEY, ALGORITHM
 
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login")
 
 
 class Token(BaseModel):

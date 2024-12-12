@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-# Dino imports
 from app import models
 from app.database import engine
 from app.auth import auth_controller

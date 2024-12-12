@@ -1,7 +1,7 @@
 from app.database import get_db
 from app import schemas, crud
 from .jwt_helper import get_password_hash, create_jwt_token
-from .auth_helper import Token, authenticate_user, get_current_active_user
+from .auth_helper import Token, authenticate_user
 
 from typing import Annotated
 from fastapi import Depends, HTTPException, APIRouter, status
@@ -10,7 +10,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 
 
-router = APIRouter(prefix="/auth", tags=["authentication"])
+router = APIRouter(tags=["authentication"])
 
 
 @router.post("/register/", response_model=schemas.User)
@@ -43,10 +43,3 @@ async def login_user(
         to_encode={"sub": str(user.id)}
     )
     return Token(access_token=access_token, token_type="bearer")
-
-
-@router.get("/me", response_model=schemas.User)
-async def read_users_me(
-    current_user: Annotated[schemas.User, Depends(get_current_active_user)],
-) -> schemas.User:
-    return current_user
