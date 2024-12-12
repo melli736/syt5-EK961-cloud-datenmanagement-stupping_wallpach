@@ -1,0 +1,7 @@
+{
+  "venvPath": "/Users/markus/.pyenv/versions/3.12.1/envs",
+  "venv": "cloud_datenmanagement_ek",
+
+  "typeCheckingMode": "strict",
+  "reportMissingTypeStubs": false
+}
