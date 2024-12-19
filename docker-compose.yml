@@ -1,10 +1,10 @@
 services:
-  dino_postgres:
+  cloud:
     image: postgres:15
     container_name: db
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: db
+      POSTGRES_DB: dn
     ports:
       - "5432:5432"
