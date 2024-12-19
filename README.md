@@ -168,7 +168,8 @@ Alle oben beschriebenen Testfälle wurden durchgeführt. Die Ergebnisse zeigen, 
 2. JWT-Token wie erwartet generiert und validiert werden.
 3. Fehlerhafte Anfragen (z. B. falsche Anmeldedaten) korrekt behandelt werden.
 
-
+# To-DOs
+- mehrere testfälle abdecken (backend tests, fehlende credentials bei regestrierung/login, Cross-Site Request Forgery, zu lange passwörter) 
 
 ## Quellen 
 
