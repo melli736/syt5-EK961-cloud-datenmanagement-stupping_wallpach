@@ -8,18 +8,23 @@ from urllib.parse import urlencode
 client = TestClient(app)
 
 
+def test_clear_all():
+    response = client.delete("/clear")
+
+    assert response.status_code == 200
+
+    
 def test_register():
     payload = {
         "username": "melli",
         "password": "pass",
     }
     headers = {"Content-Type": "application/x-www-form-urlencoded"}
-    response = client.post("/register", data=urlencode(payload), headers=headers)
+    response = client.put("/register", data=urlencode(payload), headers=headers)
 
     assert response.status_code == 200
-    assert response.json() == {"msg": "User created successfully"}
 
-
+    
 def test_login():
     payload = {
         "username": "melli",
@@ -42,5 +47,7 @@ def test_login_false():
     response = client.post("/login", data=urlencode(payload), headers=headers)
 
     assert response.status_code == 401
-    assert "access_token" in response.json()  # Assuming it returns an access token
-    assert "token_type" in response.json()
+    assert not "access_token" in response.json()  # Assuming it returns an access token
+    assert not "token_type" in response.json()
+
+

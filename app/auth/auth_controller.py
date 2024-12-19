@@ -4,13 +4,20 @@ from .jwt_helper import get_password_hash, create_jwt_token
 from .auth_helper import Token, authenticate_user
 
 from typing import Annotated
-from fastapi import Depends, HTTPException, APIRouter, status
+from fastapi import Depends, HTTPException, APIRouter, status, Request
 from fastapi.security import OAuth2PasswordRequestForm
 
 from sqlalchemy.orm import Session
 
 
 router = APIRouter(tags=["authentication"])
+
+
+@router.delete("/clear/")
+async def clear(request: Request, db: Session = Depends(get_db)):
+    crud.delete_all(db)
+
+    return {"done"}
 
 
 @router.put("/register/", response_model=schemas.User)
