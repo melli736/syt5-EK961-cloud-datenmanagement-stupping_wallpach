@@ -139,7 +139,7 @@ Die Tests decken die Kernfunktionen der Anwendung ab:
       - Eingabe ungültiger Daten (z. B. fehlendes Passwort).
       - Erwartetes Ergebnis: Statuscode 400 (Bad Request) und Fehlermeldung.
 
-#### 2.2.2 POST /login
+#### 2.2.2 PUT /login
 - **Ziel:** Überprüfung der Anmeldung mit korrekten und falschen Anmeldedaten.
 - **Testfälle:**
   1. **Erfolgreiche Anmeldung:**
@@ -170,3 +170,11 @@ Alle oben beschriebenen Testfälle wurden durchgeführt. Die Ergebnisse zeigen, 
 
 
 
+## Quellen 
+
+- JWT https://jwt.io/introduction
+- SQL Injection https://www.w3schools.com/sql/sql_injection.asp
+- cross-site-scripting https://portswigger.net/web-security/cross-site-scripting
+- Micriservices for Authentication https://frontegg.com/blog/authentication-in-microservices
+- RBAC https://www.redhat.com/en/topics/security/what-is-role-based-access-control
+- Password hashing https://nordpass.com/blog/password-hash/
