@@ -13,7 +13,7 @@ from sqlalchemy.orm import Session
 router = APIRouter(tags=["authentication"])
 
 
-@router.post("/register/", response_model=schemas.User)
+@router.put("/register/", response_model=schemas.User)
 async def register_new_user(
     form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
     db: Session = Depends(get_db)
